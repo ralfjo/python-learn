@@ -2,3 +2,5 @@ __pycache__/
 python_advanced/__pycache__/
 python_basic/__pycache__/
 python_intermediate/__pycache__/
+test_venv/
+.vscode/
