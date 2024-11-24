@@ -66,3 +66,29 @@
 #     }
 # }
 
+# def format_name(f_name, l_name):
+#     formated_f_name = f_name.title()
+#     formated_l_name = l_name.title()
+    
+#     return f"{formated_f_name} {formated_l_name}"
+
+# formated_string = format_name("ralf", "jo")
+# print(formated_string)
+
+# def is_leap_year(year):
+#     # """ Write your code here. 
+#     #     Don't change the function name. """
+#     if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0):
+#         leap_year = True
+#     else:
+#         leap_year = False
+    
+#     return leap_year
+
+# def outer_function(a, b):
+#     def inner_function(c, d):
+#         return c + d
+#     return inner_function(a, b)
+
+# result = outer_function(5, 10)
+# print(result)
