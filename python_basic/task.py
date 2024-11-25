@@ -92,3 +92,26 @@
 
 # result = outer_function(5, 10)
 # print(result)
+
+# def is_prime(num):
+#     is_prime_result = True
+    
+#     for i in range(2, num):
+#         if num % i == 0:
+#             is_prime_result = False
+#         if not is_prime_result:
+#             break
+    
+#     return is_prime_result
+
+# def is_prime(num):
+#     if num <= 2:
+#         return False
+ 
+#     # Loop through all the numbers between 2 and the number
+#     for i in range(2, num):
+#         # Check if the number can be divided by the potential prime number
+#         if num % i == 0:
+#             return False
+#         else:
+#             return True
