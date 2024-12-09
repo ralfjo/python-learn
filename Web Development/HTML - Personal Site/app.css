@@ -23,9 +23,18 @@ svg text {
 	}
 }
 
-.wrapper {background-color: #FFFFFF};
+.top-container {
+	background-color: #FFFFFF;
+}
 
-body {
+.middle-container {
+	background-color: #B3C8CF;
+	padding: 20px;
+	border: solid 10px;
+	margin: 10px;
+}
+
+.bottom-container {
 	background-color: #B3C8CF;
 }
 
