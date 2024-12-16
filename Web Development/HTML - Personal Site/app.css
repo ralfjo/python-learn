@@ -38,6 +38,10 @@ svg text {
 	background-color: #B3C8CF;
 }
 
+.se-word {
+	visibility: hidden;
+}
+
 hr {
 	border-style: none;
 	border-top-style: dotted;
@@ -48,4 +52,38 @@ hr {
 
 img {
 	height: 150px;
+}
+
+body {
+	margin: 0;
+	text-align: center;
+	font-family: "Great Vibes", cursive;
+}
+
+h1 {
+	margin: 0 auto 0 auto;
+}
+
+.red {
+	height: 100px;
+	width: 100px;
+	background-color: red;
+	position: absolute;
+	top: 200px;
+	left: 200px;
+}
+.blue {
+	height: 100px;
+	width: 100px;
+	background-color: blue;
+	position: absolute;
+	left: 100px;
+	top: 100px;
+}
+.yellow {
+	height: 100px;
+	width: 100px;
+	background-color: yellow;
+	position: fixed;
+	left: 0px;
 }
