@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Memo Write Form</title>
+        <style>
+            form > label {
+                display: inline-block;
+                width: 120px;
+            }
+            form > input {
+                padding: 4px;
+                margin-bottom: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <!-- GET 방식 -->
+        <form action="http://localhost:8000/onememos/writeMemo/" method="GET">
+            <button>GET 방식 클릭</button>
+        </form>
+        <!-- POST 방식 -->
+        <form action="http://localhost:8000/onememos/writeMemo/" method="POST">
+            {% csrf_token %}
+            <button>POST 방식 클릭</button>
+        </form>
+        
+
+        <h1>Onememo Form</h1>
+
+        <form action="http://localhost:8000/onememos/createMemo/" method="POST" id="memoWriteForm">
+        {% csrf_token %}
+        
+            <label for="memo">한 줄 메모 입력</label>
+            <input type="text" autocomplete="off" id="memo" name="memoContent" size="100" placeholder="한줄 메모 내용을 작성하세요!">
+            <button type="submit" form="memoWriteForm">한 줄 메모 등록하기</button>
+        </form>
+
+        <!-- 리스트 뷰 -->
+        <div style="padding-top: 50px;">
+            <ul style="line-height: 2em;">
+
+                {% for article in lists %}
+                    <li>
+                        <b>{{ article.id }}</b>.
+                        {{ article.memo_text }}
+                        <small style="color:deeppink; font-weight: bold;">
+                            ({{ article.published_date | date:'Y-m-d' }})
+                        </small>
+                    </li>
+                {% endfor %}
+
+            </ul>
+        </div>
+    </body>
+</html>

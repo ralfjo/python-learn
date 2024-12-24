@@ -4,3 +4,5 @@ python_basic/__pycache__/
 python_intermediate/__pycache__/
 test_venv/
 .vscode/
+.venv/
+db.sqlite3
