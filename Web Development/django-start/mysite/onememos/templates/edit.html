@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Memo Edit Form</title>
+        <style>
+            form > label {
+                display: inline-block;
+                width: 120px;
+            }
+            form > input {
+                padding: 4px;
+                margin-bottom: 4px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <h1>Onememo Edit Form</h1>
+
+        <form action="./update/" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="idx" value="{{article.id}}">
+
+            <label for="memo">한 줄 메모 수정</label>
+            <input type="text" autocomplete="off" id="memo" name="memoContent" size="100" value="{{ article.memo_text }}">
+            <button type="submit">한 줄 메모 수정하기</button>
+
+        </form>
+
+    </body>
+</html>

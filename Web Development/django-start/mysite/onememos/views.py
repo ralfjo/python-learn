@@ -35,4 +35,34 @@ def writeMemo(request):
     if request.method == "POST":
         return HttpResponse('POST 방식')
         # return render(request, 'my_template.html', {'Method': 'POST 방식'})
-    
+
+@csrf_exempt
+def editPage(request, idx):
+    # return HttpResponse('수정 페이지 = ' + idx)
+    article = Memo.objects.get(id=idx)
+    data = {'article':article}
+
+    return render(request, 'edit.html', data)
+
+@csrf_exempt
+def updateMemo(request):
+    idx = request.POST['idx']
+    memoContent = request.POST['memoContent']
+
+    # return HttpResponse(idx + memoContent)
+    # 실질적인 DB에서의 수정 처리
+    db_article = Memo.objects.get(id = idx)
+    db_article.memo_text = memoContent
+    db_article.save()
+
+    return HttpResponseRedirect(reverse('main'))
+
+@csrf_exempt
+def deleteMemo(request, idx):
+    # return HttpResponse(idx)
+
+    # DB삭제 처리
+    db_article = Memo.objects.get(id = idx)
+    db_article.delete()
+
+    return HttpResponseRedirect(reverse('main'))
