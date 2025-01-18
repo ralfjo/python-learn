@@ -6,6 +6,4 @@ urlpatterns = [
     path('select/', views.select, name='select'),
     path('result/', views.result, name="result"),
     
-    re_path()
-    path('select/<int:year>/', <method>, <name>),
 ]
