@@ -42,7 +42,9 @@ Model
 - 장고의 모델을 사용하면 기존의 SQL 쿼리문과 같은 것 없이 데이터 처리 및 DB 연동 작업을 할 수 있다.
 MVC
 MVT
-
+```
+HTTP 요청 -> 요청 받음 -> URL conf -> 뷰를 결정 (url.py) -> 메소드 실행 (views.py) -> templates (render) -> html 리턴
+```
 
 # App 생성하기
 app 추가
