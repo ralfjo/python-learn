@@ -7,3 +7,5 @@ test_venv/
 .venv/
 .DS_Store
 db.sqlite3
+*.csv
+*.xlsx
