@@ -69,12 +69,11 @@ all_data["시가총액변화율(1달)(%)"] = (all_data["시가총액변화(1달)
 
 # 거래량 변화량 추가
 all_data["거래량변화"] = all_data.groupby("티커")["거래량"].diff()
-all_data["거래율(%)"] = (all_data["거래량변화"] / all_data["상장주식수"]) * 100  # 거래량 변화율 (%)
-all_data["거래량변화율(%)"] = (all_data["거래량변화"] / all_data["상장주식수"]) * 100  # 거래량 변화율 (%)
+all_data["거래량변화율(%)"] = (all_data["거래량변화"] / all_data["거래량"].shift(1)) * 100
 all_data["거래량변화(1주)"] = all_data.groupby("티커")["거래량"].diff(periods=5)
-all_data["거래량변화율(1주)(%)"] = (all_data["거래량변화(1주)"] / all_data["상장주식수"]) * 100
+all_data["거래량변화율(1주)(%)"] = (all_data["거래량변화(1주)"] / all_data["거래량"]) * 100
 all_data["거래량변화(1달)"] = all_data.groupby("티커")["거래량"].diff(periods=20)
-all_data["거래량변화율(1달)(%)"] = (all_data["거래량변화(1달)"] / all_data["상장주식수"]) * 100
+all_data["거래량변화율(1달)(%)"] = (all_data["거래량변화(1달)"] / all_data["거래량"]) * 100
 
 # 종가 변화량 추가
 all_data["종가변화"] = all_data.groupby("티커")["종가"].diff()
